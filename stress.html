@@ -153,16 +153,22 @@ footer{background:#080808;padding:60px 32px 36px}
         <div>
           <div class="card" style="padding:44px">
             <p class="lbl" style="margin-bottom:30px">Request a Stress Test</p>
-            <div class="fmg"><label class="form-lbl">Institution Name</label><input type="text" class="form-inp" placeholder="Full legal name of institution"></div>
-            <div class="fmg"><label class="form-lbl">Primary Contact Name</label><input type="text" class="form-inp" placeholder="Full name"></div>
-            <div class="fmg"><label class="form-lbl">Title / Role</label><input type="text" class="form-inp" placeholder="Chief Compliance Officer, General Counsel…"></div>
-            <div class="fmg"><label class="form-lbl">Institutional Email</label><input type="email" class="form-inp" placeholder="name@institution.com"></div>
-            <div class="fmg"><label class="form-lbl">Primary Regulator</label>
-              <select class="form-sel"><option value="">Select primary regulator</option><option>Federal Reserve</option><option>OCC</option><option>FDIC</option><option>CFPB</option><option>FCA (UK)</option><option>ECB / SSM</option><option>Multiple / Other</option></select>
-            </div>
-            <div class="fmg"><label class="form-lbl">Primary Area of Concern</label><textarea class="form-ta" placeholder="Describe the regulatory challenge, upcoming examination, or specific governance layer you are preparing for…"></textarea></div>
-            <p style="font-size:12px;color:var(--muted);margin-bottom:22px;line-height:1.7">All inquiries are handled under strict confidentiality. TSeven9 does not share client information with third parties under any circumstances.</p>
-            <button class="btn-primary" style="width:100%;text-align:center">Submit Inquiry →</button>
+            <form action="https://api.web3forms.com/submit" method="POST" id="stress-form">
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+              <input type="hidden" name="subject" value="New Stress Test Inquiry — TSeven9">
+              <input type="hidden" name="redirect" value="https://www.tseven9.co/stress.html?submitted=true">
+              <div class="fmg"><label class="form-lbl">Institution Name</label><input type="text" name="institution" class="form-inp" placeholder="Full legal name of institution" required></div>
+              <div class="fmg"><label class="form-lbl">Primary Contact Name</label><input type="text" name="name" class="form-inp" placeholder="Full name" required></div>
+              <div class="fmg"><label class="form-lbl">Title / Role</label><input type="text" name="title" class="form-inp" placeholder="Chief Compliance Officer, General Counsel…"></div>
+              <div class="fmg"><label class="form-lbl">Institutional Email</label><input type="email" name="email" class="form-inp" placeholder="name@institution.com" required></div>
+              <div class="fmg"><label class="form-lbl">Primary Regulator</label>
+                <select name="regulator" class="form-sel"><option value="">Select primary regulator</option><option>Federal Reserve</option><option>OCC</option><option>FDIC</option><option>CFPB</option><option>FCA (UK)</option><option>ECB / SSM</option><option>Multiple / Other</option></select>
+              </div>
+              <div class="fmg"><label class="form-lbl">Primary Area of Concern</label><textarea name="message" class="form-ta" placeholder="Describe the regulatory challenge, upcoming examination, or specific governance layer you are preparing for…"></textarea></div>
+              <p style="font-size:12px;color:var(--muted);margin-bottom:22px;line-height:1.7">All inquiries are handled under strict confidentiality. TSeven9 does not share client information with third parties under any circumstances.</p>
+              <div id="form-success" style="display:none;background:#EAF3DE;border:0.5px solid #639922;border-radius:3px;padding:16px;margin-bottom:20px;font-size:14px;color:#3B6D11;">Thank you — your inquiry has been received. We will be in touch shortly.</div>
+              <button type="submit" class="btn-primary" style="width:100%;text-align:center">Submit Inquiry →</button>
+            </form>
           </div>
         </div>
       </div>
@@ -196,21 +202,21 @@ footer{background:#080808;padding:60px 32px 36px}
     <div>
       <div class="ft-col-title">Contact</div>
       <ul class="ft-links">
-        <li><a href="mailto:info@tseven9.co">info&#64;tseven9&#46;co</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#20494e464f6054534556454e190e434f">info&#64;tseven9&#46;co</a></li>
       </ul>
     </div>
   </div>
   <div class="ft-bottom"><span>&#169; 2026 TSeven9. All rights reserved.</span></div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+if(window.location.search.includes('submitted=true')){
+  var s=document.getElementById('form-success');
+  if(s){s.style.display='block';}
+  window.history.replaceState({},'',window.location.pathname);
+}
 function toggleAcc(hd){
   var icon=hd.querySelector('.acc-icon');
   var body=hd.nextElementSibling;
   var isOpen=body.classList.contains('open');
   document.querySelectorAll('.acc-body').forEach(function(b){b.classList.remove('open');});
-  document.querySelectorAll('.acc-icon').forEach(function(i){i.classList.remove('open');});
-  if(!isOpen){body.classList.add('open');icon.classList.add('open');}
-}
-</script>
-</body>
-</html>
+  document.querySelectorAll('.acc-icon').fo
