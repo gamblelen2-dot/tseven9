@@ -35,6 +35,8 @@ body{font-family:var(--sans);font-size:16px;line-height:1.7;color:var(--text);ba
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
 nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:0.5px solid var(--border);padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo-img{height:26px;display:block}
+.ft-logo-img{height:28px;display:block;margin-bottom:14px}
 .nav-logo{font-family:var(--serif);font-size:22px;font-weight:400;cursor:pointer;color:var(--text);text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
 .nav-links a{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;text-decoration:none;transition:color .15s}
@@ -127,7 +129,7 @@ footer{background:#080808;padding:60px 32px 36px}
 </head>
 <body>
 <nav id="main-nav">
-  <a class="nav-logo" href="index.html">TSeven9</a>
+  <a class="nav-logo" href="index.html"><img src="images/wordmark-navy.png" alt="TSeven9" class="nav-logo-img"></a>
   <ul class="nav-links">
     <li><a href="index.html" id="nl-home" class="act">Home</a></li>
     <li><a href="firm.html" id="nl-firm">The Firm</a></li>
@@ -286,7 +288,7 @@ footer{background:#080808;padding:60px 32px 36px}
 <footer>
   <div class="ft-inner">
     <div>
-      <div class="ft-logo">TSeven9</div>
+      <div class="ft-logo"><img src="images/wordmark-white.png" alt="TSeven9" class="ft-logo-img"></div>
       <p style="font-size:13px;line-height:1.75;max-width:240px;color:rgba(255,255,255,.35)">Pioneering Governance Intelligence to systematically prove regulatory defensibility.</p>
     </div>
     <div>
@@ -302,7 +304,6 @@ footer{background:#080808;padding:60px 32px 36px}
       <div class="ft-col-title">Resources</div>
       <ul class="ft-links">
         <li><a href="publications.html">Publications</a></li>
-        <li><a href="checklist.html">Defensibility Checklist</a></li>
         <li><a href="https://tseven9-diagnostic.streamlit.app/" target="_blank">Login</a></li>
         <li><a href="stress.html">Stress Test</a></li>
       </ul>

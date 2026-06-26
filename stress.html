@@ -35,6 +35,8 @@ body{font-family:var(--sans);font-size:16px;line-height:1.7;color:var(--text);ba
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
 nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:0.5px solid var(--border);padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo-img{height:26px;display:block}
+.ft-logo-img{height:28px;display:block;margin-bottom:14px}
 .nav-logo{font-family:var(--serif);font-size:22px;font-weight:400;cursor:pointer;color:var(--text);text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
 .nav-links a{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;text-decoration:none;transition:color .15s}
@@ -127,7 +129,7 @@ footer{background:#080808;padding:60px 32px 36px}
 </head>
 <body>
 <nav id="main-nav">
-  <a class="nav-logo" href="index.html">TSeven9</a>
+  <a class="nav-logo" href="index.html"><img src="images/wordmark-navy.png" alt="TSeven9" class="nav-logo-img"></a>
   <ul class="nav-links">
     <li><a href="index.html" id="nl-home">Home</a></li>
     <li><a href="firm.html" id="nl-firm">The Firm</a></li>
@@ -154,7 +156,7 @@ footer{background:#080808;padding:60px 32px 36px}
           <div class="card" style="padding:44px">
             <p class="lbl" style="margin-bottom:30px">Request a Stress Test</p>
             <form action="https://api.web3forms.com/submit" method="POST" id="stress-form">
-              <input type="hidden" name="access_key" value="6a90b515-06de-43d1-a0b8-eb3d3094e3c2">
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
               <input type="hidden" name="subject" value="New Stress Test Inquiry: TSeven9">
               <input type="hidden" name="redirect" value="https://www.tseven9.co/stress.html?submitted=true">
               <div class="fmg"><label class="form-lbl">Institution Name</label><input type="text" name="institution" class="form-inp" placeholder="Full legal name of institution" required></div>
@@ -162,18 +164,7 @@ footer{background:#080808;padding:60px 32px 36px}
               <div class="fmg"><label class="form-lbl">Title / Role</label><input type="text" name="title" class="form-inp" placeholder="Chief Compliance Officer, General Counsel…"></div>
               <div class="fmg"><label class="form-lbl">Institutional Email</label><input type="email" name="email" class="form-inp" placeholder="name@institution.com" required></div>
               <div class="fmg"><label class="form-lbl">Primary Regulator</label>
-                <select name="regulator" class="form-sel">
-                  <option value="">Select primary regulator</option>
-                  <option>OCC — Office of the Comptroller of the Currency</option>
-                  <option>FRB — Federal Reserve Board</option>
-                  <option>FDIC — Federal Deposit Insurance Corporation</option>
-                  <option>NCUA — National Credit Union Administration</option>
-                  <option>CFPB — Consumer Financial Protection Bureau</option>
-                  <option>FinCEN — Financial Crimes Enforcement Network</option>
-                  <option>NYDFS — New York Department of Financial Services</option>
-                  <option>DFPI — California Department of Financial Protection & Innovation</option>
-                  <option>Multiple / Other</option>
-                </select>
+                <select name="regulator" class="form-sel"><option value="">Select primary regulator</option><option>Federal Reserve</option><option>OCC</option><option>FDIC</option><option>CFPB</option><option>FCA (UK)</option><option>ECB / SSM</option><option>Multiple / Other</option></select>
               </div>
               <div class="fmg"><label class="form-lbl">Primary Area of Concern</label><textarea name="message" class="form-ta" placeholder="Describe the regulatory challenge, upcoming examination, or specific governance layer you are preparing for…"></textarea></div>
               <p style="font-size:12px;color:var(--muted);margin-bottom:22px;line-height:1.7">All inquiries are handled under strict confidentiality. TSeven9 does not share client information with third parties under any circumstances.</p>
@@ -186,11 +177,10 @@ footer{background:#080808;padding:60px 32px 36px}
     </div>
   </section>
 
-  <footer><div class="ft-inner"><div><div class="ft-logo">TSeven9</div><p style="font-size:13px;color:rgba(255,255,255,.35)">Pioneering Governance Intelligence.</p></div><div><div class="ft-col-title">Navigate<
-<footer>
+  <footer>
   <div class="ft-inner">
     <div>
-      <div class="ft-logo">TSeven9</div>
+      <div class="ft-logo"><img src="images/wordmark-white.png" alt="TSeven9" class="ft-logo-img"></div>
       <p style="font-size:13px;line-height:1.75;max-width:240px;color:rgba(255,255,255,.35)">Pioneering Governance Intelligence to systematically prove regulatory defensibility.</p>
     </div>
     <div>
@@ -206,7 +196,6 @@ footer{background:#080808;padding:60px 32px 36px}
       <div class="ft-col-title">Resources</div>
       <ul class="ft-links">
         <li><a href="publications.html">Publications</a></li>
-        <li><a href="checklist.html">Defensibility Checklist</a></li>
         <li><a href="https://tseven9-diagnostic.streamlit.app/" target="_blank">Login</a></li>
         <li><a href="stress.html">Stress Test</a></li>
       </ul>
